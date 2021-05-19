@@ -122,3 +122,8 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 export EDITOR=$(which vim)
+export DOCKER_BUILDKIT=1
+export VIMRC="~/.vimrc"
+
+alias dcs=docker-compose
+. "$HOME/.cargo/env"

@@ -1,3 +1,9 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+  autocmd VimEnter * PlugInstall --sync | source $VIMRC
+endif
+
 syntax on
 
 set number relativenumber
@@ -50,21 +56,22 @@ colorscheme minimalist
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'arcticicestudio/nord-vim'
-Plug 'ghifarit53/tokyonight-vim'
-Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'preservim/nerdcommenter'
-Plug 'dikiaap/minimalist'
-Plug 'davidhalter/jedi-vim'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'jiangmiao/auto-pairs'
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'ghifarit53/tokyonight-vim'
+  Plug 'preservim/nerdtree'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
+  Plug 'ycm-core/YouCompleteMe'
+  Plug 'preservim/nerdcommenter'
+  Plug 'dikiaap/minimalist'
+  Plug 'davidhalter/jedi-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
