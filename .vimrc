@@ -44,6 +44,7 @@ set cmdheight=1
 
 set hid
 
+set cursorline
 set lazyredraw
 
 set magic
@@ -72,6 +73,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'jiangmiao/auto-pairs'
   Plug 'rust-lang/rust.vim'
+  Plug 'fannheyward/coc-rust-analyzer'
 
 call plug#end()
 
@@ -87,8 +89,9 @@ nmap <F3> :NERDTreeToggle<CR>
 nmap <C-f> :Files<CR>
 nmap <C-n> :bn<CR>
 nmap <C-p> :bp<CR>
-nmap <leader>r :vertical resize 80<CR>
-nmap <leader>v :resize 20<CR>
+nmap <C-a> ^
+nmap <C-w> $
+imap hh <esc>
 
 set term=xterm-256color
 
