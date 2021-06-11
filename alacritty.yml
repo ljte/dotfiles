@@ -23,6 +23,7 @@ env:
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
   TERM: alacritty
+  WINIT_X11_SCALE_FACTOR: '1'
 
 window:
   # Window dimensions (changes require restart)
@@ -122,15 +123,7 @@ font:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
-    # value specified for the normal font.
-    family: Source Code Pro
-
-    # The `style` can be specified to pick a specific face.
-    style: Bold
-
-  # Italic ont face
-  italic:
-    # Font family
+    # value specified for the normal font.  family: Source Code Pro # The `style` can be specified to pick a specific face.  style: Bold # Italic ont face italic: # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
@@ -151,7 +144,7 @@ font:
     style: Bold Italic
 
   # Point size
-  size: 13
+  size: 10
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -159,7 +152,7 @@ font:
   #offset:
   #  x: 0
   #  y: 0
-
+  size: 12
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
   # right, increasing `y` moves the glyph upward.
@@ -226,7 +219,6 @@ colors:
   #   - Ease
   #   - EaseOut
   #   - EaseOutSine
-  #   - EaseOutQuad
   #   - EaseOutCubic
   #   - EaseOutQuart
   #   - EaseOutQuint
@@ -270,16 +262,16 @@ colors:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
+    shape: Block
 
     # Cursor blinking state
     #
@@ -288,7 +280,7 @@ colors:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
+    blinking: Off
 
   # Vi mode cursor style
   #
@@ -303,14 +295,14 @@ colors:
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
-  #unfocused_hollow: true
+  unfocused_hollow: true
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
-  #thickness: 0.15
+  thickness: 0.1
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
