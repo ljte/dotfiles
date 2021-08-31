@@ -10,6 +10,7 @@ endif
 
 syntax on
 set autoread
+set mouse=a
 
 set number relativenumber
 set scrolloff=5
@@ -76,7 +77,6 @@ call plug#begin('~/.vim/plugged')
   " useful utils
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'machakann/vim-highlightedyank'
 
   Plug 'tpope/vim-fugitive'
@@ -101,9 +101,9 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 set termguicolors
-set bg=dark
+set bg=light
 
-colorscheme tomorrow
+colorscheme oliveira
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -156,6 +156,7 @@ let g:ale_fixers = {
 let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme='base16_classic_light'
 
 let g:ycm_auto_hover = 1
 
@@ -178,4 +179,3 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 nmap <leader>d :call CocAction("jumpDefinition")<cr>
 nmap <leader>c <Plug>(coc-references)
-
