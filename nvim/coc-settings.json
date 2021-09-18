@@ -1,5 +1,0 @@
-{
-  "coc.preferences.triggerSignatureHelp": true,
-  "coc.preferences.echodocSupport": true,
-  "python.venvPath": "~/.cache/pypoetry/virtualenvs/"
-}
