@@ -78,3 +78,9 @@ inoremap <C-j> <esc>
 vnoremap <C-j> <esc>
 inoremap <C-c> <esc>
 vnoremap <C-c> <esc>
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'machakann/vim-highlightedyank'
+
+call plug#end()
