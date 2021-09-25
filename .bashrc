@@ -119,11 +119,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 export EDITOR=$(which vim)
 export DOCKER_BUILDKIT=1
 export VIMRC="~/.vimrc"
+export PATH=$PATH:/usr/local/go/bin
 
 alias dcs=docker-compose
-. "$HOME/.cargo/env"
