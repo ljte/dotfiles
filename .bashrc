@@ -58,7 +58,7 @@ fi
 
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\t \[\033[01;34m\]\w\[\033[32m\]$(__git_ps1)\[\033[00m\]\n$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\W\[\033[32m\]$(__git_ps1)\[\033[00m\] > '
     # DEFAULT PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\W\$ '
@@ -122,6 +122,11 @@ fi
 export EDITOR=$(which vim)
 export DOCKER_BUILDKIT=1
 export VIMRC="~/.vimrc"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="${PATH}:~/.local/bin/:/usr/local/go/bin"
 
 alias dcs=docker-compose
+alias glo="git log --oneline"
+alias gst="git status"
+alias gcan="git commit --amend --no-edit"
+alias gd="git diff"
+alias gsh="git show"
