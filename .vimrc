@@ -58,10 +58,10 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-set termguicolors
-set bg=light
+set notermguicolors
+set bg=dark
 
-colorscheme zellner
+colorscheme delek
 
 let mapleader = ","
 

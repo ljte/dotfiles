@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export TERM=xterm-256color
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -130,3 +132,4 @@ alias gst="git status"
 alias gcan="git commit --amend --no-edit"
 alias gd="git diff"
 alias gsh="git show"
+. "$HOME/.cargo/env"
