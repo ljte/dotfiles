@@ -125,6 +125,7 @@ export EDITOR=$(which vim)
 export DOCKER_BUILDKIT=1
 export VIMRC="~/.vimrc"
 export PATH="${PATH}:~/.local/bin/:/usr/local/go/bin"
+export GOPATH="${HOME}/hd/Projects/go"
 
 alias dcs=docker-compose
 alias glo="git log --oneline"
