@@ -39,7 +39,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color|alacritty) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -123,8 +123,8 @@ fi
 
 export EDITOR=$(which vim)
 export DOCKER_BUILDKIT=1
-export VIMRC="~/.vimrc"
-export PATH="${PATH}:~/.local/bin/:/usr/local/go/bin"
+export VIMRC="${HOME}/.vimrc"
+export PATH="${PATH}:${HOME}/.local/bin/:/usr/local/go/bin"
 export GOPATH="${HOME}/hd/Projects/go"
 
 alias dcs=docker-compose
@@ -133,4 +133,10 @@ alias gst="git status"
 alias gcan="git commit --amend --no-edit"
 alias gd="git diff"
 alias gsh="git show"
+
+alias vim=nvim
+alias vc="vim $HOME/.config/nvim/init.vim"
+
+alias delta="delta --light --side-by-side --line-numbers"
+
 . "$HOME/.cargo/env"
