@@ -138,5 +138,6 @@ alias vim=nvim
 alias vc="vim $HOME/.config/nvim/init.vim"
 
 alias delta="delta --light --side-by-side --line-numbers"
+alias d=docker
 
 . "$HOME/.cargo/env"

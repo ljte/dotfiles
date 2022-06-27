@@ -77,5 +77,9 @@ vnoremap <C-c> <esc>
 call plug#begin('~/.vim/plugged')
 
 Plug 'machakann/vim-highlightedyank'
+Plug 'preservim/nerdtree'
 
 call plug#end()
+
+nnoremap <leader>e :NERDTreeToggle<cr>
+
