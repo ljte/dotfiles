@@ -60,7 +60,8 @@ fi
 
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\W\[\033[32m\]$(__git_ps1)\[\033[00m\] > '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\W\[\033[32m\]$(__git_ps1)\[\033[00m\] > '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\W\[\033[32m\]\[\033[00m\] > '
     # DEFAULT PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\W\$ '
@@ -121,11 +122,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 export DOCKER_BUILDKIT=1
 export VIMRC="${HOME}/.vimrc"
 export PATH="${PATH}:${HOME}/.local/bin/:/usr/local/go/bin"
-export GOPATH="${HOME}/hd/Projects/go"
+export GOPATH="${HOME}/Projects/go"
 
 alias dcs=docker-compose
 alias glo="git log --oneline"
@@ -134,7 +135,6 @@ alias gcan="git commit --amend --no-edit"
 alias gd="git diff"
 alias gsh="git show"
 
-alias vim=nvim
 alias vc="vim $HOME/.config/nvim/init.vim"
 
 alias delta="delta --light --side-by-side --line-numbers"
