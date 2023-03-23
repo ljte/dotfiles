@@ -113,11 +113,12 @@ require('lazy').setup({
   },
 
   { -- Theme inspired by Atom
-    'shaunsingh/nord.nvim',
+    'projekt0n/github-nvim-theme',
+    --tag='v0.0.7'
     priority = 1000,
     config = function()
-      vim.g.nord_italic = false
-      vim.cmd.colorscheme 'nord'
+      require('github-theme').setup()
+      --vim.cmd.colorscheme 'git'
     end,
   },
 
@@ -127,7 +128,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'nord',
+        theme = 'github-theme',
         component_separators = '|',
         section_separators = '',
       },
@@ -504,8 +505,9 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.keymap.set('n', '<leader>s', vim.cmd.w)
-vim.keymap.set('n', '<leader>q', vim.cmd.wq)
-vim.keymap.set('n', '<leader>c', vim.cmd.wqa)
+
 vim.keymap.set('n', '<leader>e', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>tN', vim.cmd.tabnew)
+vim.keymap.set('n', '<leader>tn', vim.cmd.tabnext)
+vim.keymap.set('n', '<leader>tp', vim.cmd.tabprevious)
 
