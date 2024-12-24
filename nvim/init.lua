@@ -113,12 +113,12 @@ require('lazy').setup({
   },
 
   { -- Theme inspired by Atom
-    'projekt0n/github-nvim-theme',
+    'gbprod/nord.nvim',
     --tag='v0.0.7'
     priority = 1000,
     config = function()
-      require('github-theme').setup()
-      --vim.cmd.colorscheme 'git'
+      require('nord').setup({})
+      vim.cmd.colorscheme('nord')
     end,
   },
 
@@ -128,7 +128,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'auto',
+        theme = 'nord',
         component_separators = '|',
         section_separators = '',
       },
@@ -139,9 +139,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
+    main = "ibl",
     opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
     },
   },
 
@@ -173,6 +172,10 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
+
+  install = {
+    colorscheme = {'nord'},
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
@@ -292,7 +295,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').git_files, { desc
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'help', 'vim' },
+  ensure_installed = {'go', 'python', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
@@ -411,10 +414,8 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  clangd = {},
   gopls = {},
   pyright = {},
-  rust_analyzer = {},
 
   lua_ls = {
     Lua = {
