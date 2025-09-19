@@ -125,15 +125,21 @@ fi
 export EDITOR=$(which nvim)
 export DOCKER_BUILDKIT=1
 export VIMRC="${HOME}/.vimrc"
-export PATH="${PATH}:${HOME}/.local/bin/:/usr/local/go/bin"
+export PATH="${PATH}:${HOME}/.local/bin:/usr/local/go/bin"
 export GOPATH="${HOME}/Projects/go"
 
-alias dcs=docker-compose
+installs_dir=$HOME/.elixir-install/installs
+export PATH="${installs_dir}/otp/27.3.4/bin:${PATH}"
+export PATH=${installs_dir}/elixir/1.18.4-otp-27/bin:${PATH}
+
+alias dcs="docker compose"
+alias glo="git log"
 alias glo="git log --oneline"
-alias gst="git status"
-alias gcan="git commit --amend --no-edit"
+alias gst="git st"
+alias gci="git ci"
 alias gd="git diff"
 alias gsh="git show"
+alias gco="git co"
 
 alias vc="vim $HOME/.config/nvim/init.vim"
 
@@ -144,3 +150,5 @@ alias d=docker
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(fzf --bash)"
